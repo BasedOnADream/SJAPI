@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+var cors = require('cors')
 const app = express();
 const PORT =  7005;
 
@@ -34,7 +35,9 @@ app.get("/getAllUsers", (req, res) =>
     res.status(200).send(JSON.parse(getData()))
 })
 
+app.use(cors())
 app.use(express.json())
+
 app.post("/addUser", (req,res) =>
 {
     const {id, name, surname, age, nationality} = req.body;

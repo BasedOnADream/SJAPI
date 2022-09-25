@@ -1,7 +1,5 @@
 # SJAPI(Simple JSON API)
 
----
-
 This API can:
 
 - Read users
