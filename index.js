@@ -30,13 +30,14 @@ const Check = (uid) =>
     }
 }
 
+app.use(cors())
+
+app.use(express.json())
+
 app.get("/getAllUsers", (req, res) =>
 {
     res.status(200).send(JSON.parse(getData()))
 })
-
-app.use(cors())
-app.use(express.json())
 
 app.post("/addUser", (req,res) =>
 {
@@ -56,8 +57,6 @@ app.post("/addUser", (req,res) =>
         Append(req.body)
     }
 })
-
-
 
 app.get("/getUser/:uid", (req, res) =>
 {
